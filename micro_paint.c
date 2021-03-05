@@ -74,7 +74,7 @@ int	main(int argc, char **argv)
 					if (pix_type == 'r') // 테두리만
 					{
 						if ((float)x < pix_x + 1.0000000 || (float)x > (pix_x + pix_w) - 1.0000000 ||
-							(float)y < pix_y + 1.0000000 || (float)y < (pix_y + pix_h) - 1.0000000)
+							(float)y < pix_y + 1.0000000 || (float)y > (pix_y + pix_h) - 1.0000000)
 							image[y * bg_w + x] = pix_c;
 					}
 					else if (pix_type == 'R') // 채워진

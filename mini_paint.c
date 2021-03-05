@@ -56,6 +56,8 @@ int	main(int argc, char **argv)
 	// 그림 채우기
 	while (read == 5)
 	{
+		if ((pix_type != 'c' && pix_type != 'C') ||(pix_r <= 0))
+			return (ft_puterr("Error: Operation file corrupted\n"));
 		y = 0;
 		while (y < bg_h)
 		{
