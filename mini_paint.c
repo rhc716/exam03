@@ -64,17 +64,17 @@ int	main(int argc, char **argv)
 			x = 0;
 			while (x < bg_w)
 			{
-				distance = sqrtf(powf((float)x - pix_x, 2.0) * powf((float)y - pix_y, 2.0));
+				distance = sqrtf(powf((float)x - pix_x, 2.0) + powf((float)y - pix_y, 2.0));
 				// 공통 조건
 				if (distance <= pix_r)
 				{
 					if (pix_type == 'c') // 테두리만
 					{
 						if (distance > pix_r - 1.0000000)
-							image[y * bg_h + x] = pix_c;
+							image[y * bg_w + x] = pix_c;
 					}
 					else if (pix_type == 'C') // 채워진
-						image[y * bg_h + x] = pix_c;
+						image[y * bg_w + x] = pix_c;
 				}
 				x++;
 			}
