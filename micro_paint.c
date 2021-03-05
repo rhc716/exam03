@@ -90,6 +90,7 @@ int	main(int argc, char **argv)
 	if (read != -1)
 	{
 		free(image);
+                fclose(file);
 		return (ft_puterr("Error: Operation file corrupted\n"));
 	}
 	// 그리기
