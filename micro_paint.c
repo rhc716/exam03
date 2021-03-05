@@ -67,20 +67,17 @@ int	main(int argc, char **argv)
 			x = 0;
 			while (x < bg_w)
 			{
-				if (pix_type == 'r') // 테두리만
+				// 공통 조건
+				if ((float)x >= pix_x && (float)x <= pix_x + pix_w && 
+					(float)y >= pix_y && (float)y <= pix_y + pix_h)
 				{
-					if ((float)x >= pix_x && (float)x <= pix_x + pix_w && 
-						(float)y >= pix_y && (float)y <= pix_y + pix_h)
-                    {
+					if (pix_type == 'r') // 테두리만
+					{
 						if ((float)x < pix_x + 1.0000000 || (float)x > (pix_x + pix_w) - 1.0000000 ||
 							(float)y < pix_y + 1.0000000 || (float)y < (pix_y + pix_h) - 1.0000000)
 							image[y * bg_w + x] = pix_c;
 					}
-				}
-				else if (pix_type == 'R') // 채워진 사각형
-				{
-					if ((float)x >= pix_x && (float)x <= pix_x + pix_w && 
-						(float)y >= pix_y && (float)y <= pix_y + pix_h)
+					else if (pix_type == 'R') // 채워진
 						image[y * bg_w + x] = pix_c;
 				}
 				x++;
